@@ -3,9 +3,9 @@ VarDec1List:^
 VarDec1List:VarDec1 VarDec1List
 VarDec1:Type id ;
 VarDec1:Type id [ num ] ;
-FuncDec1List:FunDec1
-FuncDec1List:FunDec1 FunDec1List
-FuncDec1:Type id ( ParamDecList ) Block
+FunDec1List:FunDec1
+FunDec1List:FunDec1 FunDec1List
+FunDec1:Type id ( ParamDecList ) Block
 ParamDecList:^
 ParamDecList:ParamDec1ListTail
 ParamDec1ListTail:ParamDec1
