@@ -1,18 +1,18 @@
-Program:VarDec1List FunDec1List
-VarDec1List:^
-VarDec1List:VarDec1 VarDec1List
-VarDec1:Type id ;
-VarDec1:Type id [ num ] ;
-FunDec1List:FunDec1
-FunDec1List:FunDec1 FunDec1List
-FunDec1:Type id ( ParamDecList ) Block
+Program:VarDeclList FunDeclList
+VarDeclList:^
+VarDeclList:VarDecl VarDeclList
+VarDecl:Type id ;
+VarDecl:Type id [ num ] ;
+FunDeclList:FunDecl
+FunDeclList:FunDecl FunDeclList
+FunDecl:Type id ( ParamDecList ) Block
 ParamDecList:^
 ParamDecList:ParamDec1ListTail
-ParamDec1ListTail:ParamDec1
-ParamDec1ListTail:ParamDec1, ParamDec1ListTail
-ParamDec1:Type id
-ParamDec1:Type id[]
-Block:{ VarDec1List StmtList }
+ParamDeclListTail:ParamDecl
+ParamDeclListTail:ParamDecl, ParamDeclListTail
+ParamDecl:Type id
+ParamDecl:Type id[]
+Block:{ VarDeclList StmtList }
 Type:int
 Type:char
 StmtList:Stmt
@@ -41,16 +41,15 @@ Stmt:break ;
 Stmt:if ( Expr ) Stmt else Stmt
 Stmt:while ( Expr ) Stmt
 Stmt:Block
-Expr:Primary
+Expr:id
+Expr:num
+Expr:( Expr )
+Expr:id ( ExprList )
+Expr:id [ Expr ]
 Expr:UnaryOp Expr
 Expr:Expr BinOp Expr
 Expr:id = Expr
-Expr:id [Expr] = Expr
-Primary:id
-Primary:num
-Primary:( Expr )
-Primary:id ( ExprList )
-Primary:id [ Expr ]
+Expr:id [ Expr ] = Expr
 ExprList:^
 ExprList:ExprListTail
 ExprListTail:Expr
