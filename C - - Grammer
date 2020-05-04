@@ -41,16 +41,15 @@ Stmt:break ;
 Stmt:if ( Expr ) Stmt else Stmt
 Stmt:while ( Expr ) Stmt
 Stmt:Block
-Expr:Primary
+Expr:id
+Expr:num
+Expr:( Expr )
+Expr:id ( ExprList )
+Expr:id [ Expr ]
 Expr:UnaryOp Expr
 Expr:Expr BinOp Expr
 Expr:id = Expr
 Expr:id [ Expr ] = Expr
-Primary:id
-Primary:num
-Primary:( Expr )
-Primary:id ( ExprList )
-Primary:id [ Expr ]
 ExprList:^
 ExprList:ExprListTail
 ExprListTail:Expr
