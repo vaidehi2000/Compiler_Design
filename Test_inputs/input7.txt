@@ -1,0 +1,13 @@
+int a ;
+int b ( int c , int d )
+{
+if ( 2 == a )
+return a * 2
+else
+write -2 ; 
+}
+int b1 ( int c1 [ ] , int d1 ) 
+{ 
+while ( 2 < 3 )
+2 = 2 * 3 == a + b * c ; 
+}
