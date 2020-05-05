@@ -7,11 +7,11 @@ FunDeclList:FunDecl
 FunDeclList:FunDecl FunDeclList
 FunDecl:Type id ( ParamDecList ) Block
 ParamDecList:^
-ParamDecList:ParamDec1ListTail
+ParamDecList:ParamDeclListTail
 ParamDeclListTail:ParamDecl
-ParamDeclListTail:ParamDecl, ParamDeclListTail
+ParamDeclListTail:ParamDecl , ParamDeclListTail
 ParamDecl:Type id
-ParamDecl:Type id[]
+ParamDecl:Type id [ ]
 Block:{ VarDeclList StmtList }
 Type:int
 Type:char
